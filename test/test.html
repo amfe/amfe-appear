@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>懒加载</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+  <style>
+    body{ background: #eee; height: 1000px; }
+    ul,li{padding: 0; margin: 0; list-style: none;}
+    #main .list-wrap{
+      overflow: hidden;
+    }
+    #main .list-item{
+      padding: 5px 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+    #main .pic-wrap{
+      float: left;
+      margin: 0 10px;
+      height: 100px;
+      min-width: 50px;
+    }
+    #main .cont-wrap{
+      padding: 5px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.4;
+    }      
+  </style>
+</head>
+<body>
+ <div id="mocha"></div>
+ <div id="main">
+  <ul class="list-wrap">
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li id="J_new-item" class="list-item">
+      <div class="cont-wrap">
+        你一定觉得我很美，我是个新对象
+      </div>
+    </li>
+  </ul>
+</div>
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script>
+  mocha.ui('bdd');
+  mocha.reporter('html');
+  var expect = chai.expect;
+</script>
+<script src="../samples/bundle.js"></script>
+<script src="./test.js"></script>
+<script>
+  if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+  else { mocha.run(); }
+</script>
+</body>
+</html>

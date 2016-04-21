@@ -1,0 +1,85 @@
+/**
+ * ref.:
+ *   + http://eslint.org/docs/rules/[rule-name]
+ *   + https://pirosikick.github.io/eslintrc-editor/
+ *
+ * eslint v2.x
+ */
+{
+  "root": true,
+  "extends": "eslint:recommended", // @see http://eslint.org/docs/rules/
+
+  "env": {                         // @see http://eslint.org/docs/user-guide/configuring
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "commonjs": true
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "globalReturn": false,
+      "impliedStrict": false,
+      "jsx": false,
+      "experimentalObjectRestSpread": false
+    }
+  },
+
+  "rules": {
+    /* switch off built-in(eslint:recommended) */
+    "no-cond-assign": 1, // disallow assignment in conditional expressions
+    "no-extra-boolean-cast": 1, // disallow double-negation boolean casts in a boolean context 
+    /* Best Practices */
+    "accessor-pairs": [2, {"getWithoutSet": true}], // Enforces getter/setter pairs in objects
+    "array-callback-return": 2, // Enforces return statements in callbacks of array's methods
+    "block-scoped-var": 2, // treat var statements as if they were block scoped
+    "curly": 2, // specify curly brace conventions for all control statements
+    "default-case": 2, // require default case in switch statements
+    "dot-location": [2, "property"], // enforces consistent newlines before or after dots
+    "dot-notation": 2, // encourages use of dot notation whenever possible
+    "eqeqeq": 2, // require the use of === and !==
+    "no-alert": 2, // disallow the use of alert, confirm, and prompt
+    "no-caller": 2, // disallow use of arguments.caller or arguments.callee
+    "no-div-regex": 2, // disallow division operators explicitly at beginning of regular expression
+    "no-eq-null": 2, // disallow comparisons to null without a type-checking operator
+    "no-eval": 2, // disallow use of eval()
+    "no-extend-native": 2, // disallow adding to native types
+    "no-extra-bind": 2, // disallow unnecessary function binding
+    "no-extra-label": 2, // disallow unnecessary labels
+    "no-invalid-this": 2, // disallow this keywords outside of classes or class-like objects
+    "no-iterator": 2, // disallow usage of __iterator__ property
+    "no-labels": 2, // disallow use of labeled statements
+    "no-lone-blocks": 2, // disallow unnecessary nested blocks
+    "no-loop-func": 2, // disallow creation of functions within loops
+    "no-multi-str": 2, // disallow use of multiline strings
+    "no-new": 2, // disallow use of the new operator when not part of an assignment or comparison
+    "no-new-func": 2, // disallow use of new operator for Function object
+    "no-new-wrappers": 2, // disallows creating new instances of String,Number, and Boolean
+    "no-proto": 2, // disallow usage of __proto__ property
+    "no-with": 2, // disallow use of the with statement
+    "arrow-body-style": [2, "as-needed"], // require braces in arrow function body
+    "no-confusing-arrow": 2, // disallow arrow functions where they could be confused with comparisons
+    "object-shorthand": 2, // require method and property shorthand syntax for object literals
+    "prefer-arrow-callback": 2, // suggest using arrow functions as callbacks
+    "prefer-const": 2, // suggest using const declaration for variables that are never modified after declared
+    "prefer-spread": 2, // suggest using the spread operator instead of .apply()
+    "prefer-template": 2, // suggest using template literals instead of strings concatenation
+    "brace-style": [2, "1tbs"], // enforce one true brace style
+    "camelcase": [2, {"properties": "always"}], // enforce one true brace style
+    "no-array-constructor": 2, // disallow use of the Array constructor
+    "no-multiple-empty-lines": 2, // disallow multiple empty lines
+    "no-new-object": 2, // disallow the use of the Object constructor
+    /* can be fixed*/
+    "keyword-spacing": 2, // enforce spacing before and after keywords
+    "indent": [2, 4, {"SwitchCase": 1}], // specify tab or space width for your code 
+    "no-trailing-spaces": 2, // disallow trailing whitespace at the end of lines 
+    "no-spaced-func": 2, // disallow space between function identifier and application
+    "semi": 2, // require or disallow use of semicolons instead of ASI 
+    "no-multi-spaces": 2, // disallow use of multiple spaces
+    "comma-spacing": 2, // enforce spacing before and after comma 
+    "arrow-spacing": 2, // require space before/after arrow function's arrow
+  }
+}
