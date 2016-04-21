@@ -4,9 +4,9 @@ const doc = document;
 const appearEvt = doc.createEvent("HTMLEvents"); //创建自定义显示事件  ;
 const disappearEvt = doc.createEvent("HTMLEvents"); //创建自定义显示事件  ;
 
-function createEvent() {
-  appearEvt.initEvent('appear', false, true);
-  disappearEvt.initEvent('disappear', false, true);
+function createEvent(eventType) {
+  appearEvt.initEvent(eventType, false, true);
+  disappearEvt.initEvent(eventType, false, true);
 }
 
 /**
@@ -207,6 +207,7 @@ function __fire() {
   var viewWrapper = this.viewWrapper,
     elements = this.appearWatchElements,
     appearCallback = this.options.onAppear, //appear的执行函数
+    isDispatch = this.options.isDispatch,// 是否分发事件
     disappearCallback = this.options.onDisappear, //disappear的执行函数
     viewWrapperOffset = getOffset(viewWrapper, {
       x: this.options.x,
@@ -244,9 +245,12 @@ function __fire() {
             ele.removeEventListener('appear', appearFn);
           };
           ele.addEventListener('appear', appearFn);
-
-          //触发自定义事件
-          ele.dispatchEvent(appearEvt);
+          if (isDispatch) {
+            //触发自定义事件
+            ele.dispatchEvent(appearEvt);
+          } else {
+            appearFn(appearEvt);
+          }
           ele._hasAppear = true;
           ele._appear = true;
         }
@@ -259,8 +263,12 @@ function __fire() {
           };
           ele.addEventListener('disappear', disappearFn);
 
-          //触发自定义事件
-          ele.dispatchEvent(disappearEvt);
+          if (isDispatch) {
+            //触发自定义事件
+            ele.dispatchEvent(disappearEvt);
+          } else {
+            disappearFn(disappearEvt);
+          }
           ele._hasDisAppear = true;
           ele._appear = false;
         }
@@ -272,6 +280,8 @@ function __fire() {
 function __init(opts) {
   //扩展参数
   extend(this.options, opts || (opts = {}));
+  //注册事件
+  createEvent(this.options.eventType);
   //获取目标元素
   this.appearWatchElements = this.appearWatchElements || __getElements.call(this, `.${this.options.cls}`);
   //初始化位置信息
@@ -293,6 +303,8 @@ class Appear {
       h: null,
       cls: 'amfe-appear',
       once: false,
+      isDispatch: true,
+      eventType: 'appear',// 事件类型，默认出现事件为appear、消失事件为disappear，自定义事件名，消失事件自动加上前缀dis
       onAppear() {},
       onDisappear() {}
     };
@@ -365,7 +377,6 @@ const appear = {
     });
   }
 };
-//注册事件
-createEvent();
+
 
 export default appear;
