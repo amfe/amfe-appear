@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>The API | amfe-appear</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./CHANGELOG.html" />
+    
+    
+    <link rel="prev" href="./QuickStart.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2"
+        data-chapter-title="The API"
+        data-filepath="API.md"
+        data-basepath="."
+        data-revision="Thu Apr 21 2016 21:21:45 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Overview
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="QuickStart.html">
+            
+                
+                    <a href="./QuickStart.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Getting Started
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="API.html">
+            
+                
+                    <a href="./API.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        The API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="CHANGELOG.html">
+            
+                
+                    <a href="./CHANGELOG.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Change Logs
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >amfe-appear</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="the-api">The API</h1>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> AmfeAppear <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;amfe-appear&apos;</span>;
+</code></pre>
+<h2 id="initializate">initializate</h2>
+<h3 id="amfeappearappearinitoptions">AmfeAppear.appear.init(options);</h3>
+<p>create an appear instance</p>
+<pre><code class="lang-jsdoc">@param {Object} options - options of initializaion
+</code></pre>
+<h2 id="options">Options</h2>
+<p>&#x521D;&#x59CB;&#x5316;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x4F20;&#x5165;&#x4E00;&#x4E2A;options&#x5BF9;&#x8C61;&#xFF0C;&#x5982;<code>let instance = AmfeAppear.appear.init(options)</code>.</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x91CD;&#x7F6E;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x5E94;&#x8BE5;<code>instance.reset(options)</code>.</p>
+<h3 id="viewwrapper">viewWrapper</h3>
+<ul>
+<li>Type: <code>String | HTMLElement</code></li>
+<li>Default: window</li>
+</ul>
+<p>&#x89C6;&#x7A97;&#x5143;&#x7D20;</p>
+<h3 id="cls">cls</h3>
+<ul>
+<li>Type: <code>String</code></li>
+<li>Default: &apos;amfe-appear&apos;</li>
+</ul>
+<p>&#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x7C7B;&#x540D;</p>
+<h3 id="once">once</h3>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: false</li>
+</ul>
+<p>&#x662F;&#x5426;&#x53EA;&#x89E6;&#x53D1;&#x4E00;&#x6B21;appear&#x3001;disappear&#x4E8B;&#x4EF6;</p>
+<h3 id="isdispatch">isDispatch</h3>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default: true</li>
+</ul>
+<p>&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5206;&#x53D1;appear&#x3001;disappear&#x539F;&#x751F;dom&#x4E8B;&#x4EF6;</p>
+<h3 id="eventtype">eventType</h3>
+<ul>
+<li>Type: <code>String</code></li>
+<li>Default: &apos;appear&apos;</li>
+</ul>
+<p>&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x51FA;&#x73B0;&#x4E8B;&#x4EF6;&#x4E3A;appear&#x3001;&#x6D88;&#x5931;&#x4E8B;&#x4EF6;&#x4E3A;disappear&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x540D;&#xFF0C;&#x6D88;&#x5931;&#x4E8B;&#x4EF6;&#x81EA;&#x52A8;&#x52A0;&#x4E0A;&#x524D;&#x7F00;dis</p>
+<h3 id="onappear">onAppear</h3>
+<ul>
+<li>Type: <code>Function</code></li>
+<li>Default: function() {}</li>
+</ul>
+<p>&#x89E6;&#x53D1;appear&#x4E8B;&#x4EF6;&#x65F6;&#x7684;&#x56DE;&#x8C03;</p>
+<h3 id="ondisappear">onDisappear</h3>
+<ul>
+<li>Type: <code>Function</code></li>
+<li>Default: function() {}</li>
+</ul>
+<p>&#x89E6;&#x53D1;disappear&#x4E8B;&#x4EF6;&#x65F6;&#x7684;&#x56DE;&#x8C03;</p>
+<h3 id="x">x</h3>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: 0</li>
+</ul>
+<p>&#x53EF;&#x89C6;&#x533A;&#x57DF;&#x8DDD;&#x79BB;&#x89C6;&#x7A97;&#x5DE6;&#x8FB9;&#x8DDD;&#x79BB;&#xFF0C;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x5728;&#x5927;&#x4E8E;&#x89C6;&#x7A97;&#x5DE6;&#x8FB9;x + <code>&apos;px&apos;</code>&#x7684;&#x5143;&#x7D20;&#x89E6;&#x53D1;appear&#x4E8B;&#x4EF6;</p>
+<h3 id="y">y</h3>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: 0</li>
+</ul>
+<p>&#x53EF;&#x89C6;&#x533A;&#x57DF;&#x8DDD;&#x79BB;&#x89C6;&#x7A97;&#x5E95;&#x90E8;&#x8DDD;&#x79BB;&#xFF0C;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x5728;&#x5927;&#x4E8E;&#x89C6;&#x7A97;&#x5E95;&#x90E8;y + <code>&apos;px&apos;</code>&#x7684;&#x5143;&#x7D20;&#x89E6;&#x53D1;appear&#x4E8B;&#x4EF6;</p>
+<h3 id="h">h</h3>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: &#xFF08;&#x89C6;&#x7A97;&#x9AD8;&#x5EA6;&#xFF09;</li>
+</ul>
+<p>&#x53EF;&#x89C6;&#x533A;&#x57DF;&#x9AD8;&#x5EA6;&#xFF0C;&#x51FA;&#x73B0;&#x5728;&#x5927;&#x4E8E;&#x89C6;&#x7A97;&#x5E95;&#x90E8;y + <code>&apos;px&apos;</code>&#xFF0C;&#x5C0F;&#x4E8E;(y + h) + <code>&apos;px&apos;</code>&#x7684;&#x5143;&#x7D20;&#x89E6;&#x53D1;appear&#x4E8B;&#x4EF6;</p>
+<h3 id="w">w</h3>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: &#xFF08;&#x89C6;&#x7A97;&#x5BBD;&#x5EA6;&#xFF09;</li>
+</ul>
+<p>&#x53EF;&#x89C6;&#x533A;&#x57DF;&#x5BBD;&#x5EA6;&#xFF0C;&#x51FA;&#x73B0;&#x5728;&#x5927;&#x4E8E;&#x89C6;&#x7A97;&#x5DE6;&#x8FB9;x + <code>&apos;px&apos;</code>&#xFF0C;&#x5C0F;&#x4E8E;(x + w) + <code>`&apos;px&apos;</code>&#x7684;&#x5143;&#x7D20;&#x89E6;&#x53D1;appear&#x4E8B;&#x4EF6;</p>
+<h3 id="wait">wait</h3>
+<ul>
+<li>Type: <code>Number</code></li>
+<li>Default: 100</li>
+</ul>
+<p>&#x89E6;&#x53D1;&#x8282;&#x6D41;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x4F18;&#x5316;&#x6027;&#x80FD;&#x4F7F;&#x7528;</p>
+<h2 id="guide-pic">GUIDE PIC</h2>
+<p><img src="http://gw.alicdn.com/mt/TB1kEc5MpXXXXblXVXXXXXXXXXX-360-600.png" alt=""></p>
+<h2 id="methods">Methods</h2>
+<h3 id="initoptions">init(options)</h3>
+<p>create an appear instance</p>
+<pre><code class="lang-javascript">AmfeAppear.appear.init(options);
+</code></pre>
+<p>return appear instance</p>
+<h3 id="fireall">fireAll</h3>
+<p>fire all appear instance</p>
+<pre><code class="lang-javascript">AmfeAppear.appear.fireAll();
+</code></pre>
+<h2 id="instance-methods">Instance Methods</h2>
+<h3 id="fire">fire()</h3>
+<p>fire appear check</p>
+<pre><code class="lang-javascript">instance.fire();
+</code></pre>
+<h3 id="bindnode">bind(node)</h3>
+<p>add bind element</p>
+<pre><code class="lang-jsdoc">@return {String | HTMLElement} node - css3 selector or html element
+</code></pre>
+<pre><code class="lang-javascript">instance.bind(<span class="hljs-string">&apos;.item&apos;</span>);
+</code></pre>
+<p>or</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> node = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.item&apos;</span>);
+instance.bind(node);
+</code></pre>
+<h3 id="resetoptions">reset(options)</h3>
+<p>reset the config of instance</p>
+<p>return an appear instance</p>
+<pre><code class="lang-jsdoc">@return {Object} options - options of initializaion
+</code></pre>
+<pre><code class="lang-javascript">instance.reset(options);
+</code></pre>
+<h2 id="events">Events</h2>
+<h3 id="appear">appear</h3>
+<p>This event fires when element appear in viewWrapper <code>from disappear</code>;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;amfe-appear item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> node = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.item&apos;</span>);
+node.addEventListener(<span class="hljs-string">&apos;appear&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ev</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(ev);
+    });
+</code></pre>
+<h3 id="disappear">disappear</h3>
+<p>This event fires when element disappear in viewWrapper <code>from appear</code>;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;amfe-appear item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> node = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.item&apos;</span>);
+node.addEventListener(<span class="hljs-string">&apos;disappear&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ev</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(ev);
+    });
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./QuickStart.html" class="navigation navigation-prev " aria-label="Previous page: Getting Started"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./CHANGELOG.html" class="navigation navigation-next " aria-label="Next page: Change Logs"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

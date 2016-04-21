@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>懒加载</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{ background: #eee; }
+    ul,li{padding: 0; margin: 0; list-style: none;}
+    #main .list-wrap{
+      overflow: hidden;
+    }
+    #main .list-item{
+      padding: 5px 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+    #main .pic-wrap{
+      float: left;
+      margin: 0 10px;
+      height: 100px;
+      min-width: 50px;
+    }
+    #main .cont-wrap{
+      padding: 5px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.4;
+    }      
+  </style>
+</head>
+<body>
+ <div id="main">
+  <ul class="list-wrap">
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+    <li class="list-item amfe-appear">
+      <img class="pic-wrap" data-src="//gw.alicdn.com/tfscom/tuitui/TB2md1wdVXXXXXXXpXXXXXXXXXX_!!919528325-0-dgshop.jpg" />
+      <div class="cont-wrap">
+        你一定觉得我很美
+      </div>
+    </li>
+  </ul>
+</div>
+<script src="bundle.js"></script>
+<script>
+  (function () {
+
+    var AmfeAppear = require('amfe-appear');
+
+    //宝贝列表实例化，查找类名包含amfe-appear的元素
+    var itemAppear = AmfeAppear.appear.init({
+      cls: 'amfe-appear',
+      onAppear: function(){
+        //元素处在可视区域内，执行懒加载
+        var img = this.querySelector('img');
+        // 延迟执行，方便查看效果
+        setTimeout(function() {
+          img.src = img.getAttribute('data-src');
+        }, 500);
+      },
+      onDisappear: function() {
+        //元素处在不可视区域内，做输出
+        console.log(this);
+      }
+    });
+
+    // 触发校验
+    itemAppear.fire();
+
+  }) () ;
+</script>
+</body>
+</html>
